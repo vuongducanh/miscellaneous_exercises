@@ -91,41 +91,43 @@ public class Exercise15 {
            }
             System.Console.Write("ban muon them ten Sinh Vien  = ");
             String value = Convert.ToString(Console.ReadLine());
-             list.Add(value);
-             System.Console.WriteLine("array vua nhap la");
-             list.Sort();
+             System.Console.Write("nhap vi tri ban muon them index = ");
+             int index = Convert.ToInt32(Console.ReadLine());
+             list.Insert(index,value);  //Insert la thêm vào vị trí thứ index của mảng;
+             System.Console.WriteLine("array Cua ban  la :");
+            //  list.Sort();
            for (int i = 0; i < list.Count; i++)
            {
                System.Console.WriteLine(list[i] + " ");
            }
       }
-      
+
        public static void sort()
-      {
-          int[] array = new int[]{2,1,4,5,3};
-          for (int i = 0; i <array.Length; i++)
-          {
-              for (int j = i+1; j < array.Length; j++)
-              {
-                  if(array[i] > array[j])
-                  {
-                      int temp = array[i];
-                      array[i] =array[j];
-                      array[j] = temp;
-                  }
-              }
-          }
-          foreach (var item in array)
-          {
-              System.Console.Write(item+" ");
-          }
-      }
+        {
+            int[] array = new int[]{2,1,4,5,3};
+            for (int i = 0; i <array.Length; i++)
+            {
+                for (int j = i+1; j < array.Length; j++)
+                {
+                    if(array[i] > array[j])
+                    {
+                        int temp = array[i];
+                        array[i] =array[j];
+                        array[j] = temp;
+                    }
+                }
+            }
+            foreach (var item in array)
+            {
+                System.Console.Write(item+" ");
+            }
+        }
     static void Main (string[] args) {
         // xoaphantu();
         // Exercise15.themvaodaucuoi();
         // xoatungkitumoi();
         // fibonacci();
-        sort();
-        // addlist();
+        // sort();
+        addlist();
     }
 }
