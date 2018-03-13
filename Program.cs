@@ -45,83 +45,86 @@ public class Exercise15 {
         input = Console.ReadLine ();
         char[] array = input.ToCharArray ();
         int l = array.Length;
-        int i =0;
+        int i = 0;
 
-        while (i<l) {
-                System.Console.WriteLine ();
-                System.Console.Write ("nhap ki tu ban muon xoa char = ");
-                char input2 = Convert.ToChar (Console.ReadLine ());
-                if (input2 == array[i]) {
-                    array[i] -= array[i];
-                }
-                Console.Write (array[i]);  
-                i++;
+        while (i < l) {
+            System.Console.WriteLine ();
+            System.Console.Write ("nhap ki tu ban muon xoa char = ");
+            char input2 = Convert.ToChar (Console.ReadLine ());
+            if (input2 == array[i]) {
+                array[i] -= array[i];
             }
+            Console.Write (array[i]);
+            i++;
         }
-      public static void fibonacci()
-      {
-         int a=0,b=1,input;
-         System.Console.Write("nhap vao input = ");
-         input = Convert.ToInt32(Console.ReadLine());
-         for (int i = 0; i < input; i++)
-         {
-             int temp = a;
-             a=b;
-             b=temp+b;
-             System.Console.WriteLine(a);
-         }
-      }
-     
-      public static void addlist()
-      {
-           System.Console.Write("nhap do dai cua list  n = ");
-           int n = Convert.ToInt32(Console.ReadLine());
-           string[] array = new string[n]; 
-           for (int i = 0; i <n; i++)
-           {
-               System.Console.Write("nhap phan Sinh vien[{0}] = ",i);
-               array[i] = Convert.ToString(Console.ReadLine());
-           
-           }
-             List<String> list = new List<String>();
-         
-           for (int i = 0; i <array.Length; i++)
-           {
-              list.Add(array[i]);
-           }
-            System.Console.Write("ban muon them ten Sinh Vien  = ");
-            String value = Convert.ToString(Console.ReadLine());
-             System.Console.Write("nhap vi tri ban muon them index = ");
-             int index = Convert.ToInt32(Console.ReadLine());
-             list.Insert(index,value);  //Insert la thêm vào vị trí thứ index của mảng;
-             System.Console.WriteLine("array Cua ban  la :");
-            //  list.Sort();
-           for (int i = 0; i < list.Count; i++)
-           {
-               System.Console.WriteLine(list[i] + " ");
-           }
-      }
+    }
+    public static void fibonacci () {
+        int a = 0, b = 1, input;
+        System.Console.Write ("nhap vao input = ");
+        input = Convert.ToInt32 (Console.ReadLine ());
+        for (int i = 0; i < input; i++) {
+            int temp = a;
+            a = b;
+            b = temp + b;
+            System.Console.WriteLine (a);
+        }
+    }
 
-       public static void sort()
-        {
-            int[] array = new int[]{2,1,4,5,3};
-            for (int i = 0; i <array.Length; i++)
-            {
-                for (int j = i+1; j < array.Length; j++)
-                {
-                    if(array[i] > array[j])
-                    {
-                        int temp = array[i];
-                        array[i] =array[j];
-                        array[j] = temp;
-                    }
+    public static void addlist () {
+        System.Console.Write ("nhap do dai cua list  n = ");
+        int n = Convert.ToInt32 (Console.ReadLine ());
+        string[] array = new string[n];
+        for (int i = 0; i < n; i++) {
+            System.Console.Write ("nhap phan Sinh vien[{0}] = ", i);
+            array[i] = Convert.ToString (Console.ReadLine ());
+
+        }
+        List<String> list = new List<String> ();
+
+        for (int i = 0; i < array.Length; i++) {
+            list.Add (array[i]);
+        }
+        System.Console.Write ("ban muon them ten Sinh Vien  = ");
+        String value = Convert.ToString (Console.ReadLine ());
+        System.Console.Write ("nhap vi tri ban muon them index = ");
+        int index = Convert.ToInt32 (Console.ReadLine ());
+        list.Insert (index, value); //Insert la thêm vào vị trí thứ index của mảng;
+        System.Console.WriteLine ("array Cua ban  la :");
+        //  list.Sort();
+        for (int i = 0; i < list.Count; i++) {
+            System.Console.WriteLine (list[i] + " ");
+        }
+    }
+
+    public static void sort () {
+        int[] array = new int[] { 2, 1, 4, 5, 3 };
+        for (int i = 0; i < array.Length; i++) {
+            for (int j = i + 1; j < array.Length; j++) {
+                if (array[i] > array[j]) {
+                    int temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
                 }
             }
-            foreach (var item in array)
-            {
-                System.Console.Write(item+" ");
-            }
         }
+        foreach (var item in array) {
+            System.Console.Write (item + " ");
+        }
+    }
+    public static void find () {
+        int[] array = new int[6];
+        array[0] = 3;
+        array[1] = 1;
+        array[2] = 5;
+        array[3] = 6;
+        array[4] = 9;
+        array[5] = 1;
+        System.Console.Write ("hay nhap phan tu ban muon tim n = ");
+        int find = Convert.ToInt32 (Console.ReadLine ());
+
+        int index1 = Array.IndexOf<int> (array, find);
+        System.Console.Write ("phan tu so {0} ma ban muon tim o vi tri thu {1}", find, index1);
+    }
     static void Main (string[] args) {
         // xoaphantu();
         // Exercise15.themvaodaucuoi();
@@ -129,5 +132,6 @@ public class Exercise15 {
         // fibonacci();
         // sort();
         // addlist();
+        // find ();
     }
 }
